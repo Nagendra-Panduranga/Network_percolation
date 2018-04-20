@@ -1,0 +1,49 @@
+/*------------------------------------------------------------------------------*/
+The C++ program simulates the k-core percolation process in a single network.
+
+In this process, a single network is built using the graph class. The nodes in the network are randomly connected such that the degree distribution is a poissonian. A local threshold is assigned to every node choosing from two of the given threshold values with a given probability. The percolation process on the constructed network involves:
+
+a. Removing all the links from a fraction of randomly chosen nodes.  The fraction of nodes left unchanged in this process is referred to as 'Percolation probability'
+
+b. kcore pruning process is performed. All links from the nodes with number of neighbors less than the local threshold are removed. 
+
+c. The biggest cluster in the network after the above two steps is found.
+
+d. The process is repeated for different percolation probability.
+
+This Folder contains:
+
+1. Single_net_kcore_perco.cpp
+2. node.hpp
+3. graph.hpp
+4. net_algo.hpp
+5. net_ops.hpp
+6. seed.dat
+7. input_parameters
+8. statool (folder)
+9. data (folder)
+
+/*-------------------------------------------------------------------------------*/
+
+To Compile:
+
+C++ Single_net_kcore_perco.cpp -o kcore_perco_exe
+
+/*-------------------------------------------------------------------------------*/
+
+To set input parameters:
+Input parameters are changed in input_parameters file. The file contains the following in three different lines:
+a. First Integer threshold value
+b. Probability that a node is assigned with above value as local kcore threshold
+c. Second Integer threshold value (Nodes not assigned with first threshold value are assigned with this integer value as the local kcore threshold.)
+
+/*-------------------------------------------------------------------------------*/
+
+To Run:
+./kcore_perco_exe < input_parameters &
+
+/*-------------------------------------------------------------------------------*/
+
+Output file:
+Output file with data will be written in the folder 'data'
+
